@@ -20,11 +20,11 @@ public class PostHandler implements Handler {
         // Parse and format the input and output for submission to the website (System.in, FileInputStream)
         String inputType = jsonObject.getJSONObject("input").getString("type");
         if (inputType.equals("stdin")) inputType = "System.in";
-        else inputType = "new FileInputStream(" + jsonObject.getJSONObject("input").getString("file") + ");";
+        else inputType = "new FileInputStream(\"" + jsonObject.getJSONObject("input").getString("fileName") + "\")";
 
         String outputType = jsonObject.getJSONObject("output").getString("type");
         if (outputType.equals("stdout")) outputType = "System.out";
-        else outputType = "new FileOutputStream(" + jsonObject.getJSONObject("output").getString("file") + ");";
+        else outputType = "new FileOutputStream(\"" + jsonObject.getJSONObject("output").getString("fileName") + "\")";
 
         // Construct the problem
         Problem problem = new Problem(
