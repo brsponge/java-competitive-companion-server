@@ -1,0 +1,6 @@
+* Java Competitive Companion Server
+A simple Java server that communicates with the Competitive Companion extension.
+Meant for personal use.
+
+** License
+[[file:LICENSE][GNU General Public License v3.0]]
